@@ -1,0 +1,29 @@
+.hero-sec-about {
+    padding-block: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        width: 50%;
+
+        h2 {
+            color: $primary-color;
+            font-family: $content-font;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: $light;
+            font-size: 3.2rem;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        p {
+            color: $content-color;
+        }
+    }
+}

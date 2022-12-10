@@ -1,0 +1,146 @@
+.hero-section {
+    display: flex;
+
+    // width: 100%;
+    &::before {
+        content: '';
+        width: 50%;
+        height: 1px;
+        opacity: 0.4;
+        background-color: $content-color;
+        position: absolute;
+    }
+
+    .hero-section-left,
+    .hero-section-right {
+        width: 50%;
+    }
+
+    .hero-section-left {
+        max-width: 600px;
+        margin-left: auto;
+        padding-top: 80px;
+
+        h1 {
+            color: $light;
+            font-size: 4rem;
+
+            span {
+                color: $primary-color;
+            }
+        }
+
+        p {
+            color: $content-color;
+            padding-block: 20px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 20px;
+
+            input {
+                padding: 18px 30px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                font-size: 0.9rem;
+            }
+
+            .hero-sec-btn {
+                @include primary-btn;
+            }
+        }
+
+        .hero-sec-left-icon {
+            display: flex;
+            gap: 30px;
+
+            div {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            i {
+                color: $primary-color;
+            }
+
+            span {
+                color: $content-color;
+            }
+        }
+    }
+
+    .hero-section-right {
+
+
+        .hero-sec-right-banner {
+            position: relative;
+
+            img {
+                border-bottom-left-radius: 30px;
+                height: 80vh;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .experience-card {
+                position: absolute;
+                top: 30%;
+                left: -3%;
+                border-radius: 10px;
+                background-color: $primary-color;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: max-content;
+                padding: 20px;
+                color: $light;
+
+                h1 {
+                    position: relative;
+                    padding-bottom: 10px;
+                    font-size: 3rem;
+
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        translate: -30% -20%;
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+
+            .job-card {
+                position: absolute;
+                width: 60%;
+                border-radius: 10px;
+                bottom: 10%;
+                right: 10%;
+                padding: 30px 20px;
+                background-color: $bg-color ;
+
+                h2 {
+                    color: $light;
+                    padding-bottom: 10px;
+                }
+
+                h4 {
+                    color: $primary-color;
+                    padding-bottom: 10px;
+                    font-size: 1.2rem;
+                    font-family: $content-font;
+                    font-weight: 400;
+                }
+
+                p {
+                    color: $content-color;
+                }
+            }
+        }
+    }
+}

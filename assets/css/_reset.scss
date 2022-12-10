@@ -8,8 +8,14 @@
     box-sizing: border-box;
 }
 
+.wrapper {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
 body {
     font-family: $content-font;
+    background-color: $bg-color;
 }
 
 h1,
@@ -28,4 +34,12 @@ img {
     font-family: $content-font;
     color: $light;
     background-color: $primary-color;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: $normal-effect;
+
+    &:hover {
+        background-color: $light;
+        color: $primary-color;
+    }
 }

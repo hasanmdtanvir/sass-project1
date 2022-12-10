@@ -1,6 +1,7 @@
 @import '../reset';
 
 .header-section {
+
     background-color: $bg-color;
     color: $light;
     padding: 5px 0;
@@ -9,8 +10,6 @@
 
 .navbar {
 
-    max-width: 1200px;
-    margin-inline: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,12 +29,13 @@
 
 
     .nav-menu {
+
         display: flex;
         list-style: none;
         align-items: center;
         gap: 40px;
 
-        .nav-item {
+        &>.nav-item {
             padding-block: 30px;
         }
 
@@ -56,18 +56,126 @@
                 margin-left: 3px;
             }
         }
+
+        .dropdown {
+            position: relative;
+
+            .dropdown-menu {
+                z-index: 100;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                translate: 0 20px;
+                top: 100%;
+                background-color: $bg-color;
+                border-radius: 5px;
+                list-style: none;
+                outline: 1px solid $content-color;
+                min-width: 200px;
+                box-shadow: $shadow;
+                transition: $normal-effect;
+
+                .nav-item {
+                    padding: 20px;
+                }
+
+                a {
+                    font-family: $content-font;
+                    text-decoration: none;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    color: $content-color;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            &:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                translate: 0 0;
+            }
+        }
     }
 
     .nav-action-block {
+        z-index: 100;
         display: flex;
         align-items: center;
-        gap: 20px
+        gap: 20px;
+
+        .contact-box {
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: $bg-color;
+            width: 400px;
+            height: 100%;
+            transition: $normal-effect;
+            transform: translateX(100%);
+
+            .contact-close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                color: $primary-color;
+                font-size: 1.5rem;
+                cursor: pointer;
+                background-color: black;
+                border-radius: 100%;
+            }
+
+            .contact-outer {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                padding-top: 150px;
+                padding-left: 50px;
+                transform: translateY(200px);
+                transition: 1s ease-out;
+
+                h1 {
+                    font-size: 2.3rem;
+                }
+
+                p {
+                    padding-block: 20px;
+                    line-height: 1.4rem;
+                }
+
+                p,
+                span {
+                    color: $content-color;
+                }
+            }
+
+            .contact-info {
+                display: flex;
+                gap: 20px;
+                padding-block: 10px;
+
+                i {
+                    color: $primary-color;
+                }
+            }
+
+            .contact-btn {
+                @include primary-btn;
+                display: inline-block;
+                margin-top: 30px;
+            }
+        }
     }
 
     .dot-menu {
         width: 20px;
         height: 20px;
         color: $primary-color;
+        cursor: pointer;
     }
 
     .action-btn {
@@ -75,11 +183,21 @@
         text-decoration: none;
         border-radius: 5px;
         transition: $normal-effect;
+    }
 
-        &:hover {
-            background-color: $light;
-            color: $primary-color;
-        }
+    #search-toggle:checked~.contact-box .contact-outer {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    #search-toggle:checked~.contact-box {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        translate: 0;
+        transform: translateX(0);
     }
 
 }

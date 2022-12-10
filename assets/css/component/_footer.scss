@@ -1,0 +1,116 @@
+footer {
+    padding-block: 100px;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        opacity: 0.4;
+        background-color: $content-color;
+        position: absolute;
+    }
+}
+
+.grid-area {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: $content-color;
+
+    .dearly {
+        padding-top: 20px;
+
+        .footer-logo {
+            color: $light;
+            text-decoration: none;
+            font-size: 3rem;
+            font-family: $heading-font;
+            font-weight: bold;
+
+            span {
+                color: $primary-color;
+            }
+
+
+        }
+
+        p {
+            padding-block: 30px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: rgb(73, 69, 69, 0.4);
+                transition: $normal-effect;
+
+                &:hover {
+                    background-color: $light;
+
+                    a {
+                        color: $primary-color;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $light;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    h1 {
+        color: $light;
+        font-size: 1.4rem;
+        font-family: $content-font;
+    }
+
+    .support,
+    .site,
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-family: $content-font;
+    }
+
+    .support,
+    .contact {
+        div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: $normal-effect;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .site {
+        list-style: none;
+
+        a {
+            text-decoration: none;
+            color: $content-color;
+            transition: $normal-effect;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
